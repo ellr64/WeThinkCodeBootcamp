@@ -11,11 +11,3 @@ int	ft_strcmp(char *str1, char *str2)
 	cmp = (int)str1[i] - (int)str2[i];
 	return (cmp);
 }
-
-//Old code that is too simple. Not exactly what was required
-/*
-int	ft_strcmp(char *s1, char *s2)
-{
-	return (*s1 - *s2);
-}
-*/
