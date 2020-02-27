@@ -1,3 +1,6 @@
+ONLY DO THIS IF YOU NEED TO SUBMIT FROM HOME.
+IT IS PREFERRED IF YOU DO ALL YOUR WORK ON A CLUSTER MAC.
+
 Before replacing any files, make sure to backup or make copies of the original files.
 
 These files are specifically for wethinkcode in Cape Town and Johannesburg.
