@@ -1,6 +1,16 @@
 #include <unistd.h>
 
-void rush()
+//This code prints a rectangle with the given dimensions and symbols
+//This was part of the colle00 assignment, the first weekend rush
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+//The initial idea using no other user defined functions
+
+void    rect_initial()
 {
     int h = 4;
     int w = 5;
@@ -74,4 +84,66 @@ void rush()
         write(1, &newline, 1);
         x++;
     }
+}
+
+//The above code was simplified, with repeating lines combined into the ft_line function
+
+void	ft_line(char left, char mid, char right, int len)
+{
+	int y;
+
+	if (len > 0)
+	{
+		ft_putchar(left);
+	}
+	y = 1;
+	while (y < len - 1)
+	{
+		ft_putchar(mid);
+		y++;
+	}
+	if (len > 1)
+	{
+		ft_putchar(right);
+	}
+	if (len > 0)
+	{
+		ft_putchar('\n');
+	}
+}
+
+void	rect(int w, int h)
+{
+	char topside = 'a';
+	char botside = 'b';
+	char leftside = 'c';
+	char rightside = 'd';
+	char topleft = '1';
+	char topright = '2';
+	char botleft = '3';
+	char botright = '4';
+	char mid = ' ';
+	char newline = '\n';
+	int x;
+
+	if (h > 0)
+	{
+		ft_line(topleft, topside, topright, w);
+	}
+	x = 1;
+	while (x < h - 1)
+	{
+		ft_line(leftside, mid, rightside, w);
+		x++;
+	}
+	if (h > 1)
+	{
+		ft_line(botleft, botside, botright, w);
+	}
+}
+
+int		main(void)
+{
+	rush(5, 4);
+	return (0);
 }
