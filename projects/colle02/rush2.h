@@ -24,6 +24,7 @@ typedef struct	s_line
 
 typedef struct	s_rect
 {
+	int			isrect;
 	int			w;
 	int			h;
 	t_line		top;

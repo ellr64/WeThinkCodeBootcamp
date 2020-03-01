@@ -22,6 +22,25 @@ int		ft_strlen(char *str)
 	return (len);
 }
 
+void	ft_rush2(char *str)
+{
+	int i = 0;
+	int w = 0;
+	int h = 0;
+	
+	while (str[i])
+	{
+
+		i++;
+	}
+}
+
+int		main(int argc, char **argv)
+{
+
+}
+
+/*
 int		ft_count_inline(char *str)
 {
 	int		count;
@@ -29,6 +48,10 @@ int		ft_count_inline(char *str)
 	count = 0;
 	while (str[count] != '\n')
 	{
+		if (str[count] == '\0')
+		{
+			return (-1);
+		}
 		count++;
 	}
 	return (count);
@@ -142,6 +165,7 @@ t_rect	*ft_new_rect()
 	top = ft_new_line();
 	mid = ft_new_line();
 	bot = ft_new_line();
+	rect->isrect = 1;
 	rect->h = 0;
 	rect->w = 0;
 	rect->top = *top;
@@ -150,19 +174,61 @@ t_rect	*ft_new_rect()
 	return (rect);
 }
 
+int		ft_check_line_lens(char *str)
+{
+	int i;
+	int w;
+	int charcount;
+
+	w = ft_count_inline(str);
+	if (w == -1)
+		return (0);
+	i = w + 1;
+	charcount = 0;
+	while (str[i] != '\0')
+	{
+		charcount = 0;
+		while (str[i] != '\n')
+		{
+			if (str[i] == '\0' && charcount > 0)
+				return (0);
+			else if (str[i] == '\0' && charcount == 0)
+				return (1);
+			charcount++;
+			i++;
+		}
+		if (charcount != w)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 t_rect	*ft_getrect(char *str)
 {
 	t_rect	*rect;
+	int i;
+	int linecount;
+	int charcount;
 
 	rect = ft_new_rect();
-	rect->h = ft_count_lines(str);
-	if (rect->h != 0)
+	i = 0;
+	if (ft_check_line_lens)
 	{
-
+		rect->h = ft_count_lines(str);
+		rect->w = ft_count_inline(str);
 	}
-	else
+	rect->top = *ft_get_line(str);
+	while (i < ft_strlen(str))
 	{
-		
+		charcount = 0;
+		while (str[i] != '\n')
+		{
+			charcount++;
+			i++;
+		}
+		linecount++;
+		i++;
 	}
 }
 
@@ -170,3 +236,4 @@ int		main(int argc, char **argv)
 {
 
 }
+*/
