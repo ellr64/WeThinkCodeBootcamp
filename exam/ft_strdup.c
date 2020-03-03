@@ -1,34 +1,8 @@
 /*Duplacate given src string to new dest string*/
 /*The new memory location must be different*/
 
-#include <unistd.h>
-
 /*Library needed for malloc function*/
 #include <stdlib.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void    ft_putstr(const char *str)
-{
-	int i;
-
-	if (!str)
-	{
-		ft_putchar('\0');
-	}
-	else
-	{
-		i = 0;
-		while (str[i] != '\0')
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
-	}
-}
 
 char	*ft_strdup(char *src)
 {
@@ -59,16 +33,4 @@ char	*ft_strdup(char *src)
 	dest[len] = '\0';
 
 	return (dest);
-}
-
-int		main(void)
-{
-	char	*src = "Hello there";
-	char	*dest;
-
-	ft_putstr(src);
-	ft_putstr("\n");
-	dest = ft_strdup(src);
-	ft_putstr(dest);
-	ft_putstr("\n");
 }
